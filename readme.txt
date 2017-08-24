@@ -1,8 +1,4 @@
-Git is a distributed version control system.
-Git is 免费的 software.
-我是zhongguoren
-中国人
-
+git使用常用命令
 git add readme.txt
 git commit -m "xxx"
 git log
@@ -24,6 +20,7 @@ git checkout -- readme.txt
 
 总之，就是让这个文件回到最近一次git commit或git add时的状态。
 **/
+git push origin master  提交
 git checkout -b dev  创建分支并切换 相当于 git branch dev  |git checkout dev
 git branch 查看分支,当前分支前有*号
 git checkout master  切换到master分支
@@ -44,6 +41,13 @@ git stash apply stash@{0}  恢复指定的stash
 git branch -D features-vulcan  强行删除features-vulcan分支
 git remote 查看远程库的信息  git remote -v 显示更详细的信息
 git push origin master 推送master分支
+git push origin dev 推送dev分支
+
+/**master分支是主分支，因此要时刻与远程同步；
+dev分支是开发分支，团队所有成员都需要在上面工作，所以也需要与远程同步；
+bug分支只用于在本地修复bug，就没必要推到远程了，除非老板要看看你每周到底修复了几个bug；
+feature分支是否推到远程，取决于你是否和你的小伙伴合作在上面开发。**/
+
 
 
 
