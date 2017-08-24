@@ -20,6 +20,7 @@ git checkout -- readme.txt
 
 总之，就是让这个文件回到最近一次git commit或git add时的状态。
 **/
+git clone git@github.com:你的用户名/库名.git  克隆自己的远程库
 git push origin master  提交
 git checkout -b dev  创建分支并切换 相当于 git branch dev  |git checkout dev
 git branch 查看分支,当前分支前有*号
@@ -47,6 +48,20 @@ git push origin dev 推送dev分支
 dev分支是开发分支，团队所有成员都需要在上面工作，所以也需要与远程同步；
 bug分支只用于在本地修复bug，就没必要推到远程了，除非老板要看看你每周到底修复了几个bug；
 feature分支是否推到远程，取决于你是否和你的小伙伴合作在上面开发。**/
+
+git tag v1.0  添加标签
+git tag 查看所有标签
+git tag v0.8 4ff353da  给提交过的id加标签
+git tag -a v0.1 -m "version 0.1 released" 3628164  -a指定标签名  -m指定说明文字
+git show v1.0 显示v1.0的说明文字
+git tag -s v0.2 -m "signed version 0.2 released" fec145a   通过-s用私钥签名一个标签
+  /**签名采用PGP签名，因此，必须首先安装gpg（GnuPG），如果没有找到gpg，或者没有gpg密钥对，就会报错：**/
+git tag -d v1.0 删除标签
+git push origin v1.0 推送远程标签
+git push origin --tags 推送全部标签
+删除标签.先本地.后远程 本地| git tag -d v1.0  远程| git push origin :refs/tags/v1.0
+git config --global alias.st status  用st代替status
+--global参数是全局参数，也就是这些命令在这台电脑的所有Git仓库下都有用。
 
 
 
